@@ -35,8 +35,6 @@ class UserPresenter: AnyPresenter {
     }
     var view: AnyView?
     
-
-    
     func intercatorDidFetchUsers(with result: Result<[User], any Error>) {
         switch result {
         case .success(let users):

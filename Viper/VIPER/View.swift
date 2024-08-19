@@ -13,7 +13,6 @@ import UIKit
 
 protocol AnyView {
     var presenter: AnyPresenter? { get set }
-    
     func update(with users: [User])
     func update(with error: String)
 }
@@ -37,12 +36,11 @@ class UserViewController: UIViewController, AnyView {
     var presenter: AnyPresenter?
     var users: [User] = []
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.addSubview(label)
         view.addSubview(tableView)
-        view.backgroundColor = .blue
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -73,6 +71,7 @@ class UserViewController: UIViewController, AnyView {
     }
 }
 
+//MARK: - TableView Functions:
 extension UserViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
